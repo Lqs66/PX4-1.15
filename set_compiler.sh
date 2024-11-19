@@ -1,0 +1,11 @@
+export PREFIX="/home/lqs66/Desktop/modelCheckingFlightControl/dependencies/llvm-16.0.4/build"
+export CC="$PREFIX/bin/clang"
+export CFLAGS="-ffixed-x26 -ffixed-x27 -gdwarf-4 -flto -fno-discard-value-names -fembed-bitcode"
+export CXX="$PREFIX/bin/clang++"
+export CXXFLAGS="-ffixed-x26 -ffixed-x27 -gdwarf-4 -flto -fno-discard-value-names -fembed-bitcode -fwhole-program-vtables"
+export AR="$PREFIX/bin/llvm-ar"
+export LD="$PREFIX/bin/lld"
+export NM="$PREFIX/bin/nm"
+export RANLIB="$PREFIX/bin/llvm-ranlib"
+export LDFLAGS="-fuse-ld=lld -flto"
+

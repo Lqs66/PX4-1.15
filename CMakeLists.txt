@@ -220,7 +220,7 @@ endif()
 # project definition
 #
 project(px4 CXX C ASM)
-
+set (CMAKE_BUILD_TYPE "Debug" CACHE STRING "Choose the type of build." FORCE)
 # CMake build type (Debug Release RelWithDebInfo MinSizeRel Coverage)
 if(NOT CMAKE_BUILD_TYPE)
 	if(${PX4_PLATFORM} STREQUAL "nuttx")
@@ -278,7 +278,7 @@ if(${PX4_PLATFORM} STREQUAL "posix")
 			"Use GNU gold linker" ON
 			"NOT WIN32;NOT APPLE" OFF
 	)
-
+	set(USE_LD_GOLD OFF)
 	if(USE_LD_GOLD)
 		execute_process(COMMAND ${CMAKE_C_COMPILER} -fuse-ld=gold -Wl,--version ERROR_QUIET OUTPUT_VARIABLE LD_VERSION)
 		if("${LD_VERSION}" MATCHES "GNU gold")
